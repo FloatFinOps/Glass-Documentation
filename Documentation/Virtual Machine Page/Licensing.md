@@ -18,11 +18,11 @@ There is a table named `MA_SoftwareSubscriptionPriceSheet` which contains the in
 
 ### 3.1 API
 
-Licensing will only be calculated when the virtual machine is a valid hybrid benefit windows candidate.
+Licensing will only be calculated when the virtual machine is a valid candidate for hybrid benefit.
 
 The logic to fetch the original price information from the database uses the following filters:
 
-Hardware cost with license:
+Hardware cost without license:
 - `ArmRegionName == virtual machine's ArmLocation`
 - `ArmSkuName == virtual machine's SKU`
 - `ProductName == "Virtual Machines"`
@@ -33,7 +33,7 @@ Hardware cost with license:
 - Order by `EffectiveStartDate`, and fetch the latest record.
 named as `consumption`
 
-Hardware cost without license:
+Hardware cost with license:
 - `ArmRegionName == virtual machine's ArmLocation`
 - `ArmSkuName == virtual machine's SKU`
 - `ProductName == "Virtual Machines"`
@@ -44,9 +44,8 @@ Hardware cost without license:
 - Order by `EffectiveStartDate`, and fetch the latest record.
 named as `osAndHardwarePaygCost`
 
-Then the value of using license per hour is:
+The data has the unit of measure as `1 Hour`, so the cost of license per hour on pay as you go is:
     `osPaygCost` = `osAndHardwarePaygCost.RetailPrice` - `consumption.RetailPrice` 
-    <!-- why? what does osPaygCost mean here? now using it directly-->
 
 In the API response, the above values are assigned to `item.hybridBenefis.osPaygCost`, which represents the 1-hour value of using hybrid benefit license for the selected virtual machine.
 
@@ -100,7 +99,7 @@ In the API response, the above values are assigned as `item.HybridBenefis[Licens
 
 ### 4.5 Calculate Savings Per Hour
 
-The saving calculation is as:
+Now, the cost of license on Pay as You Go has been calculated as `osPaygCost` in step 3.1, and the cost of license on CSP has been calculated as `licenseNeededPricePerHour` in step 4.4.So, the saving calculation of a license is as below:
     `savingsPerHour` = `osPaygCost` - `licenseNeededPricePerHour`;
 
 In the API response, the above values are assigned as `item.HybridBenefis[License duration].savingsPerHour`, which will be used in UI.
