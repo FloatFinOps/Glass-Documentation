@@ -136,4 +136,4 @@ Return
 
 ## 9. Workflow Diagram
 
-![Exports page](../Images/Workflow-EvaluationAgainstWellArchitectedFramework.png)
+![Exports page](Workflow-EvaluationAgainstWellArchitectedFramework.png)

@@ -145,4 +145,5 @@ Return
 ---
 
 ## 9. Workflow Diagram
-![Exports page](../Images/Workflow-VirtualMachineRightsizing.png)
+
+![Exports page](Workflow-VirtualMachineRightsizing.png)

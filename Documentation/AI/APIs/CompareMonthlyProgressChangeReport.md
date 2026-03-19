@@ -166,4 +166,4 @@ Return
 
 ## 9. Workflow Diagram
 
-![Exports page](../Images/Workflow-CompareMonthlyProgressChangeReport.png)
+![Exports page](Workflow-CompareMonthlyProgressChangeReport.png)
