@@ -147,4 +147,4 @@ Return
 
 ## 9. Workflow Diagram
 
-![Exports page](../Images/Workflow-SummaryTeamsMeetingTranscripts.png)
+![Exports page](Workflow-SummaryTeamsMeetingTranscripts.png)

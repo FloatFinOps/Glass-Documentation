@@ -144,4 +144,4 @@ Return Report
 
 ## 9. Workflow Diagram
 
-![Exports page](../Images/Workflow-GenerateMonthlyProgressChangeReport.png)
+![Exports page](Workflow-GenerateMonthlyProgressChangeReport.png)
