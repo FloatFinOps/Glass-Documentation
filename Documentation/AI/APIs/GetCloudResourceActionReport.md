@@ -139,4 +139,4 @@ Return
 
 ## 9. Workflow Diagram
 
-![Exports page](images/Workflow-GetCloudResourceActionReport.png)
+![Exports page](../Images/Workflow-GetCloudResourceActionReport.png)

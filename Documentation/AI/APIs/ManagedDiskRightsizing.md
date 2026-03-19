@@ -146,4 +146,4 @@ Return
 
 ## 9. Workflow Diagram
 
-![Exports page](images/Workflow-ManagedDiskRightsizing.png)
+![Exports page](../Images/Workflow-ManagedDiskRightsizing.png)
